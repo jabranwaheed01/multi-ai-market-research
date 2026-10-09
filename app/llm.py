@@ -1,0 +1,58 @@
+# # import os
+
+# # from dotenv import load_dotenv
+# # from crewai import LLM
+
+
+# # load_dotenv()
+
+
+# # def get_llm():
+# #     return LLM(
+# #         model="groq/openai/gpt-oss-20b",
+# #         api_key=os.getenv("GROQ_API_KEY"),
+# #         temperature=0.2,
+# #         max_tokens=600,
+# #     )
+
+
+
+
+# from crewai import LLM
+
+
+# def get_llm():
+#     return LLM(
+#         model="ollama/llama3.2:1b",
+#         base_url="http://localhost:11434",
+#         temperature=0.2,
+#         max_tokens=300,
+#     )
+
+
+from crewai import LLM
+
+
+def get_llm():
+    return LLM(
+        model="ollama/llama3.2:1b ",
+        base_url="http://localhost:11434",
+        temperature=0.2,
+        max_tokens=500,
+    )
+
+
+# import os
+# from dotenv import load_dotenv
+# from crewai import LLM
+
+# load_dotenv()
+
+
+# def get_llm():
+#     return LLM(
+#         model="groq/openai/gpt-oss-20b",
+#         api_key=os.getenv("GROQ_API_KEY"),
+#         temperature=0.2,
+#         max_tokens=500,
+#     )
