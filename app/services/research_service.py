@@ -1,5 +1,5 @@
-from app.crews.research_crew import create_research_crew
 
+from app.crews.research_crew import create_research_crew
 
 jobs = {}
 
@@ -7,17 +7,17 @@ jobs = {}
 def start_research(job_id: str, company: str):
     jobs[job_id] = {
         "job_id": job_id,
+        "company": company,
         "status": "running",
         "report": None,
+        "error": None,
     }
 
     try:
         crew = create_research_crew()
 
         result = crew.kickoff(
-            inputs={
-                "company": company
-            }
+            inputs={"company": company}
         )
 
         jobs[job_id]["status"] = "completed"
@@ -25,7 +25,7 @@ def start_research(job_id: str, company: str):
 
     except Exception as exc:
         jobs[job_id]["status"] = "failed"
-        jobs[job_id]["report"] = str(exc)
+        jobs[job_id]["error"] = str(exc)
 
 
 def get_job(job_id: str):
