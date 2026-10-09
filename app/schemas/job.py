@@ -5,3 +5,4 @@ class JobStatus(BaseModel):
     job_id: str
     status: str
     report: str | None = None
+    error: str | None = None
