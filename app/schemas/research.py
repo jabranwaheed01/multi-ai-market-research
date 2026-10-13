@@ -1,8 +1,8 @@
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, Field, field_validator
 
 
 class ResearchRequest(BaseModel):
-    company: str
+    company: str = Field(max_length=200)
 
     @field_validator("company")
     @classmethod
