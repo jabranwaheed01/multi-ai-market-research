@@ -19,6 +19,9 @@ def safe_calculate(expression):
     if not isinstance(expression, str) or len(expression) > 200:
         raise ValueError("Expression must be a string of at most 200 characters.")
 
+    if not isinstance(expression, str) or len(expression) > 200:
+        raise ValueError("Expression must be a string of at most 200 characters.")
+
     def evaluate(node):
         if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):
             return node.value
